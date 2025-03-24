@@ -1,0 +1,24 @@
+
+
+Algorithm: Pop Element from Array
+Input:
+- arr: the input array
+- index: the index of the element to be popped
+- size: the current size of the array
+
+Output:
+- arr: the updated array with the element popped
+- size: the updated size of the array
+
+Steps:
+1. Check if index is within bounds (0 ≤ index < size).
+2. If index is out of bounds, return an error.
+3. Shift all elements to the right of index one position to the left.
+4. Decrement size by 1.
+5. Return the updated arr and size.
+
+Time Complexity:
+- O(n), where n is the number of elements in the array.
+
+Space Complexity:
+- O(1), since we only use a constant amount of space to store the index and size variables.
