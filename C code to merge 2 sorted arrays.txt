@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+// Function to merge two sorted arrays
+void mergeArrays(int arr1[], int m, int arr2[], int n) {
+    // Create a new array to store the merged result
+    int mergedArray[m + n];
+
+    // Initialize indices for arr1, arr2, and mergedArray
+    int i = 0, j = 0, k = 0;
+
+    // Merge smaller elements first
+    while (i < m && j < n) {
+        if (arr1[i] < arr2[j]) {
+            mergedArray[k++] = arr1[i++];
+        } else {
+            mergedArray[k++] = arr2[j++];
+        }
+    }
+
+    // Copy remaining elements from arr1, if any
+    while (i < m) {
+        mergedArray[k++] = arr1[i++];
+    }
+
+    // Copy remaining elements from arr2, if any
+    while (j < n) {
+        mergedArray[k++] = arr2[j++];
+    }
+
+    // Print the merged array
+    printf("Merged Array: ");
+    for (int index = 0; index < m + n; index++) {
+        printf("%d ", mergedArray[index]);
+    }
+    printf("\n");
+}
+
+int main() {
+    // Declare and initialize two sorted arrays
+    int arr1[] = {1, 3, 5, 7};
+    int arr2[] = {2, 4, 6, 8};
+
+    // Get the sizes of the arrays
+    int m = sizeof(arr1) / sizeof(arr1[0]);
+    int n = sizeof(arr2) / sizeof(arr2[0]);
+
+    // Call the mergeArrays function
+    mergeArrays(arr1, m, arr2, n);
+
+    return 0;
+}
